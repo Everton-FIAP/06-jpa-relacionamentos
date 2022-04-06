@@ -19,7 +19,8 @@ public class Jogador {
     private Integer numero;
 
     @Column(name = "ds_posicao", length = 20)
-    private String posicao;
+    @Enumerated(EnumType.STRING)
+    private PosicaoJogador posicao;
 
     @Column(name = "vl_salario", precision = 10, scale = 2)
     private BigDecimal salario;
@@ -34,7 +35,7 @@ public class Jogador {
     public Jogador() {
     }
 
-    public Jogador(Integer id, String nome, Integer numero, String posicao, BigDecimal salario, byte[] foto, Integer time) {
+    public Jogador(Integer id, String nome, Integer numero, PosicaoJogador posicao, BigDecimal salario, byte[] foto, Integer time) {
         this.id = id;
         this.nome = nome;
         this.numero = numero;
@@ -68,11 +69,11 @@ public class Jogador {
         this.numero = numero;
     }
 
-    public String getPosicao() {
+    public PosicaoJogador getPosicao() {
         return posicao;
     }
 
-    public void setPosicao(String posicao) {
+    public void setPosicao(PosicaoJogador posicao) {
         this.posicao = posicao;
     }
 
