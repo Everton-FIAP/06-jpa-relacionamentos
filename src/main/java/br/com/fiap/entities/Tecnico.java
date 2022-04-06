@@ -16,10 +16,10 @@ public class Tecnico {
     private String nome;
 
     @Temporal(TemporalType.TIME)
-    @Column(name = "dt_nascimento", nullable = true)
+    @Column(name = "dt_nascimento")
     private Calendar dataNascimento;
 
-    @Column(name = "nr_tempo_carreira", nullable = true)
+    @Column(name = "nr_tempo_carreira")
     private Integer tempoCarreira;
 
     public Tecnico() {

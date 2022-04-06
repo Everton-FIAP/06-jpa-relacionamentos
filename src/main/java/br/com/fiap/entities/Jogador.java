@@ -15,10 +15,10 @@ public class Jogador {
     @Column(name = "nm_jogador", nullable = false, length = 80)
     private String nome;
 
-    @Column(name = "nr_jogador", nullable = true)
+    @Column(name = "nr_jogador")
     private Integer numero;
 
-    @Column(name = "ds_posicao", nullable = true, length = 20)
+    @Column(name = "ds_posicao", length = 20)
     private String posicao;
 
     @Column(name = "vl_salario", precision = 10, scale = 2)

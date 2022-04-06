@@ -11,7 +11,7 @@ public class EntityManagerFactorySingleton {
 	
 	public static EntityManagerFactory getInstance() {
 		if (fabrica == null) {
-			fabrica = Persistence.createEntityManagerFactory("CLIENTE_ORACLE");
+			fabrica = Persistence.createEntityManagerFactory("ORCL");
 		}
 		return fabrica;
 	}
