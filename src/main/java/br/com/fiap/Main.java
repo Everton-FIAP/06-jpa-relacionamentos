@@ -21,6 +21,7 @@ public class Main {
        Tecnico tecnico = new Tecnico();
        tecnico.setNome("Parreira");
        tecnico.setTempoCarreira(20);
+       tecnico.setDataNascimento(LocalDate.of(1980, 1, 1));
        
        
        TecnicoDAOImpl tecnicoDao = new TecnicoDAOImpl(entityManager);
@@ -32,6 +33,7 @@ public class Main {
        time.setNome("Palmeiras");
        time.setNomeEstadio("Allianz-Parque");
        time.setCodigoTecnico(tecnico);
+    
        
        timeDao.cadastrar(time);
        

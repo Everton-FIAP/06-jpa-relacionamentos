@@ -1,7 +1,8 @@
 package br.com.fiap.entities;
 
+import java.time.LocalDate;
+
 import javax.persistence.*;
-import java.util.Calendar;
 
 @Table(name = "TB_TECNICO")
 @Entity
@@ -15,9 +16,8 @@ public class Tecnico {
     @Column(name = "nm_tecnico", length = 100, nullable = false)
     private String nome;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "dt_nascimento")
-    private Calendar dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(name = "nr_tempo_carreira")
     private Integer tempoCarreira;
@@ -28,7 +28,7 @@ public class Tecnico {
     public Tecnico() {
     }
 
-    public Tecnico(Integer id, String nome, Calendar dataNascimento, Integer tempoCarreira) {
+    public Tecnico(Integer id, String nome, LocalDate dataNascimento, Integer tempoCarreira) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -51,11 +51,11 @@ public class Tecnico {
         this.nome = nome;
     }
 
-    public Calendar getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Calendar dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
