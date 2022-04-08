@@ -18,7 +18,7 @@ public class Time {
     @Column(name = "nm_estadio", length = 50, nullable = true)
     private String nomeEstadio;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "cd_tecnico", nullable = false )
     private Tecnico tecnico;
 

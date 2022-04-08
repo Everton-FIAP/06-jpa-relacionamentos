@@ -37,6 +37,7 @@ public class Main {
        
        timeDao.cadastrar(time);
        
+       
        System.out.println(timeDao.procurar(1));
     }
 }
