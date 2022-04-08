@@ -15,12 +15,15 @@ public class Tecnico {
     @Column(name = "nm_tecnico", length = 100, nullable = false)
     private String nome;
 
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.DATE)
     @Column(name = "dt_nascimento")
     private Calendar dataNascimento;
 
     @Column(name = "nr_tempo_carreira")
     private Integer tempoCarreira;
+    
+    @OneToOne(mappedBy = "tecnico")
+    private Time time;
 
     public Tecnico() {
     }
@@ -63,4 +66,10 @@ public class Tecnico {
     public void setTempoCarreira(Integer tempoCarreira) {
         this.tempoCarreira = tempoCarreira;
     }
+
+	@Override
+	public String toString() {
+		return "Tecnico [id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", tempoCarreira="
+				+ tempoCarreira + "]";
+	}
 }

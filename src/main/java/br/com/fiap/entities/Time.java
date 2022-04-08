@@ -18,17 +18,18 @@ public class Time {
     @Column(name = "nm_estadio", length = 50, nullable = true)
     private String nomeEstadio;
 
-    @Column(name = "cd_tecnico", unique = true)
-    private Integer codigoTecnico;
+    @OneToOne
+    @JoinColumn(name = "cd_tecnico", nullable = false )
+    private Tecnico tecnico;
 
     public Time() {
     }
 
-    public Time(Integer id, String nome, String nomeEstadio, Integer codigoTecnico) {
+    public Time(Integer id, String nome, String nomeEstadio, Tecnico tecnico) {
         this.id = id;
         this.nome = nome;
         this.nomeEstadio = nomeEstadio;
-        this.codigoTecnico = codigoTecnico;
+        this.tecnico = tecnico;
     }
 
     public Integer getId() {
@@ -55,11 +56,22 @@ public class Time {
         this.nomeEstadio = nomeEstadio;
     }
 
-    public Integer getCodigoTecnico() {
-        return codigoTecnico;
+    public Tecnico getTecnico() {
+        return tecnico;
     }
 
-    public void setCodigoTecnico(Integer codigoTecnico) {
-        this.codigoTecnico = codigoTecnico;
+    public void setCodigoTecnico(Tecnico tecnico) {
+        this.tecnico = tecnico;
     }
+    
+    
+
+	public void setTecnico(Tecnico tecnico) {
+		this.tecnico = tecnico;
+	}
+
+	@Override
+	public String toString() {
+		return "Time [id=" + id + ", nome=" + nome + ", nomeEstadio=" + nomeEstadio + ", tecnico=" + tecnico + "]";
+	}
 }

@@ -13,7 +13,7 @@ public abstract class GenericDaoImpl<T,K> implements GenericDao<T, K> {
 	private Class<T> clazz;
 	
 	@SuppressWarnings("all")
-	public GenericDaoImpl() {
+	public GenericDaoImpl(EntityManager em) {
 		this.em = em;
 		this.clazz = (Class<T>) 
 				((ParameterizedType) getClass().getGenericSuperclass())

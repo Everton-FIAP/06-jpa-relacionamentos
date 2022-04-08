@@ -15,7 +15,7 @@ public class Patrocinio {
     @Column(name = "nm_marca", length = 100, nullable = false)
     private String nomeMarca;
 
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.DATE)
     @Column(name = "dt_fim_contrato", nullable = false)
     private Calendar dataFimContrato;
 
